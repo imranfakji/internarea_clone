@@ -123,7 +123,7 @@ const Navbar = () => {
     toast.info(" Logged out successfully");
   };
 
-  const handleLanguageChange = (e) => {
+  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     i18n.changeLanguage(e.target.value);
   };
 

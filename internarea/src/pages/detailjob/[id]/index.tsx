@@ -62,7 +62,9 @@ const index = () => {
           ? `https://internshala-clone-y2p2.onrender.com/api/job/${id}`
           : `http://localhost:5000/api/job/${id}`; // Adjust port if needed
         const res = await getWithRetry(backendURL);
-        setjob(res.data);
+        if (res) {
+          setjob(res.data);
+        }
       } catch (error) {
         console.log("Error fetching job data:", error);
         toast.error("Failed to load job details. Please try again.");

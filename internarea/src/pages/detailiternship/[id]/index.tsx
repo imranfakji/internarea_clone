@@ -59,7 +59,9 @@ const index = () => {
           ? `https://internshala-clone-y2p2.onrender.com/api/internship/${id}`
           : `http://localhost:5000/api/internship/${id}`; // Adjust port if needed
         const res = await getWithRetry(backendURL);
-        setinternship(res.data);
+        if (res) {
+          setinternship(res.data);
+        }
       } catch (error) {
         console.log("Error fetching internship data:", error);
         toast.error("Failed to load internship details. Please try again.");
