@@ -30,7 +30,7 @@ export default function SvgSlider() {
  const slides = [
   {
     bgColor: "bg-gradient-to-r from-cyan-500 to-blue-600",
- 
+    badge: "VIDEO",
     title: (
       <>
         Watch our <span className="text-yellow-300 font-semibold">Internship Program</span> Overview
@@ -55,7 +55,7 @@ export default function SvgSlider() {
   },
   {
     bgColor: "bg-gradient-to-r from-purple-600 to-pink-500",
-    
+    badge: "PROJECT",
     title: (
       <>
         Build Real-World <span className="text-yellow-300 font-semibold">Intern Projects</span>
@@ -92,8 +92,8 @@ export default function SvgSlider() {
     { number: "600K+", label: "learners" },
   ];
 
-  const [internships, setInternship] = useState([]);
-  const [jobs, setJob] = useState([]);
+  const [internships, setInternship] = useState<any[]>([]);
+  const [jobs, setJob] = useState<any[]>([]);
 
   useEffect(() => {
     const fetchdata = async () => {
